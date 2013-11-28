@@ -29,6 +29,14 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'haml-rails'
 
+group :production, :staging do
+  gem "pg"
+end
+
+group :development, :test do
+  gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
